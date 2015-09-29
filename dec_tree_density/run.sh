@@ -15,7 +15,7 @@ kinds="mgc lf0"
 ##
 # Stages
 ###########################################
-tree_stat=0      # Generate the statistics of decision tree
+tree_stat=1      # Generate the statistics of decision tree
 cat_report=1     # Generate the plot files for category analysis
 node_report=0    # Generate the plot files for node analysis
 
