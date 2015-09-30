@@ -7,7 +7,7 @@
 library(ggplot2)
 library(reshape)
 library(scales)
-library(plyr)
+# library(plyr)
 require(grid)
 
 # Dealing with arguments
@@ -47,7 +47,7 @@ data.m$value <- log(data.m$value)
 
 ggplot(data.m, aes(y=X.categories, x=variable)) +
     geom_tile(aes(fill = value), colour = "black") +
-	scale_fill_gradient(low = "white", high = "#00BA38", na.value = "white", guide = "legend",
+	scale_fill_gradient(low = "lightblue", high = "#CD3333", na.value = "white", guide = "legend",
                         limits=c(0,max(data.m$value, na.rm=TRUE)))  +
 	labs(x = "Experiments", y = "Categories", fill = "Nb occurrences") +
     theme_bw() +
@@ -61,7 +61,7 @@ data.m$value <- log(data.m$value)
 
 ggplot(data.m, aes(y=X.categories, x=variable)) +
     geom_tile(aes(fill = value), colour = "black") +
-	scale_fill_gradient(low = "white", high = "#00BA38", na.value = "white", guide = "legend",
+	scale_fill_gradient(low = "lightblue", high = "#CD3333", na.value = "white", guide = "legend",
                         limits=c(0,max(data.m$value, na.rm=TRUE)))  +
 	labs(x = "Experiments", y = "Categories", fill = "Nb occurrences") +
     theme_bw() +

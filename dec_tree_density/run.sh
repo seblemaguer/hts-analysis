@@ -9,9 +9,10 @@ root_dir="$HOME/work/expes/saarbrucken-2015/variability-tts-part"
 expes="baseline with_surprisal only_surprisal"
 output_dir="tree"
 states="2 3 4 5 6"
+states="2"
 corpora="full" # validation test"
-kinds="mgc lf0"
-
+kinds="lf0 mgc"
+kinds="dur"
 ##
 # Stages
 ###########################################
