@@ -65,7 +65,7 @@ sub generate_cat_hash
     @{$cat_hash{p5}} = ("[LR][LR]-Vowel", "[LR][LR]-Consonant", "[LR][LR]-Stop", "[LR][LR]-Nasal", "[LR][LR]-Fricative", "[LR][LR]-Liquid", "[LR][LR]-Front", "[LR][LR]-Central", "[LR][LR]-Back", "[LR][LR]-Front_Vowel", "[LR][LR]-Central_Vowel", "[LR][LR]-Back_Vowel", "[LR][LR]-Long_Vowel", "[LR][LR]-Short_Vowel", "[LR][LR]-Dipthong_Vowel", "[LR][LR]-Front_Start_Vowel", "[LR][LR]-Fronting_Vowel", "[LR][LR]-High_Vowel", "[LR][LR]-Medium_Vowel", "[LR][LR]-Low_Vowel", "[LR][LR]-Rounded_Vowel", "[LR][LR]-Unrounded_Vowel", "[LR][LR]-Reduced_Vowel", "[LR][LR]-IVowel", "[LR][LR]-EVowel", "[LR][LR]-AVowel", "[LR][LR]-OVowel", "[LR][LR]-UVowel", "[LR][LR]-Unvoiced_Consonant", "[LR][LR]-Voiced_Consonant", "[LR][LR]-Front_Consonant", "[LR][LR]-Central_Consonant", "[LR][LR]-Back_Consonant", "[LR][LR]-Fortis_Consonant", "[LR][LR]-Lenis_Consonant", "[LR][LR]-Neigther_F_or_L", "[LR][LR]-Coronal_Consonant", "[LR][LR]-Non_Coronal", "[LR][LR]-Anterior_Consonant", "[LR][LR]-Non_Anterior", "[LR][LR]-Continuent", "[LR][LR]-No_Continuent", "[LR][LR]-Positive_Strident", "[LR][LR]-Negative_Strident", "[LR][LR]-Neutral_Strident", "[LR][LR]-Glide", "[LR][LR]-Syllabic_Consonant", "[LR][LR]-Voiced_Stop", "[LR][LR]-Unvoiced_Stop", "[LR][LR]-Front_Stop", "[LR][LR]-Central_Stop", "[LR][LR]-Back_Stop", "[LR][LR]-Voiced_Fricative", "[LR][LR]-Unvoiced_Fricative", "[LR][LR]-Front_Fricative", "[LR][LR]-Central_Fricative", "[LR][LR]-Back_Fricative", "[LR][LR]-Affricate_Consonant", "[LR][LR]-Not_Affricate", "[LR][LR]-silences", "[LR][LR]-aa", "[LR][LR]-ae", "[LR][LR]-ah", "[LR][LR]-ao", "[LR][LR]-aw", "[LR][LR]-ax", "[LR][LR]-axr", "[LR][LR]-ay", "[LR][LR]-b", "[LR][LR]-ch", "[LR][LR]-d", "[LR][LR]-dh", "[LR][LR]-dx", "[LR][LR]-eh", "[LR][LR]-el", "[LR][LR]-em", "[LR][LR]-en", "[LR][LR]-er", "[LR][LR]-ey", "[LR][LR]-f", "[LR][LR]-g", "[LR][LR]-hh", "[LR][LR]-hv", "[LR][LR]-ih", "[LR][LR]-iy", "[LR][LR]-jh", "[LR][LR]-k", "[LR][LR]-l", "[LR][LR]-m", "[LR][LR]-n", "[LR][LR]-nx", "[LR][LR]-ng", "[LR][LR]-ow", "[LR][LR]-oy", "[LR][LR]-p", "[LR][LR]-r", "[LR][LR]-s", "[LR][LR]-sh", "[LR][LR]-t", "[LR][LR]-th", "[LR][LR]-uh", "[LR][LR]-uw", "[LR][LR]-v", "[LR][LR]-w", "[LR][LR]-y", "[LR][LR]-z", "[LR][LR]-zh", "[LR][LR]-pau", "[LR][LR]-h#", "[LR][LR]-brth");
 
     # Syllable
-    @{$cat_hash{syl_prosody}} = ("L-Syl_Stress", "C-Syl_Stress", "R-Syl_Stress",
+    @{$cat_hash{"syl-prosody"}} = ("L-Syl_Stress", "C-Syl_Stress", "R-Syl_Stress",
                                 "L-Syl_Accent", "C-Syl_Accent", "R-Syl_Accent",
                                 "Num-StressedSyl_before_C-Syl_in_C-Phrase", "Num-StressedSyl_after_C-Syl_in_C-Phrase",
                                 "Num-AccentedSyl_before_C-Syl_in_C-Phrase", "Num-AccentedSyl_after_C-Syl_in_C-Phrase",
@@ -75,28 +75,28 @@ sub generate_cat_hash
                                   # Vowel part
                                 "C-Syl_Vowel", "C-Syl_Front_Vowel", "C-Syl_Central_Vowel", "C-Syl_Back_Vowel", "C-Syl_Long_Vowel", "C-Syl_Short_Vowel", "C-Syl_Dipthong_Vowel", "C-Syl_Front_Start", "C-Syl_Fronting_Vowel", "C-Syl_High_Vowel", "C-Syl_Medium_Vowel", "C-Syl_Low_Vowel", "C-Syl_Rounded_Vowel", "C-Syl_Unrounded_Vowel", "C-Syl_Reduced_Vowel", "C-Syl_IVowel", "C-Syl_EVowel", "C-Syl_AVowel", "C-Syl_OVowel", "C-Syl_UVowel", "C-Syl_aa", "C-Syl_ae", "C-Syl_ah", "C-Syl_ao", "C-Syl_aw", "C-Syl_ax", "C-Syl_axr", "C-Syl_ay", "C-Syl_eh", "C-Syl_el", "C-Syl_em", "C-Syl_en", "C-Syl_er", "C-Syl_ey", "C-Syl_ih", "C-Syl_iy", "C-Syl_ow", "C-Syl_oy", "C-Syl_uh", "C-Syl_uw"
                                );
-    @{$cat_hash{syl_position}} = ("Seg_Fw", "SegBw",
+    @{$cat_hash{"syl-position"}} = ("Seg_Fw", "SegBw",
                                   "L-Syl_Num-Segs", "C-Syl_Num-Segs", "C-Syl_Num-Segs",
                                   "Pos_C-Syl_in_C-Word(Fw)", "Pos_C-Syl_in_C-Word(Bw)",
                                   "Pos_C-Syl_in_C-Phrase(Fw)", "Pos_C-Syl_in_C-Phrase(Bw)");
 
-    @{$cat_hash{syl_surp}} = ("C-Syl_Surp");
+    @{$cat_hash{"syl-surprisal"}} = ("C-Syl_Surp");
 
     # Word
-    @{$cat_hash{word_prosody}} = ("L-Word_GPOS", "C-Word_GPOS", "R-Word_GPOS",
+    @{$cat_hash{"word-prosody"}} = ("L-Word_GPOS", "C-Word_GPOS", "R-Word_GPOS",
                                "Num-ContWord_before_C-Word_in_C-Phrase", "Num-ContWord_after_C-Word_in_C-Phrase",
                                "Num-Words_from_prev-ContWord", "Num-Words_from_next-ContWord");
-    @{$cat_hash{word_position}} = ("L-Word_Num-Syls", "C-Word_Num-Syls", "R-Word_Num-Syls", "Pos_C-Word_in_C-Phrase(Fw)", "Pos_C-Word_in_C-Phrase(Bw)");
+    @{$cat_hash{"word-position"}} = ("L-Word_Num-Syls", "C-Word_Num-Syls", "R-Word_Num-Syls", "Pos_C-Word_in_C-Phrase(Fw)", "Pos_C-Word_in_C-Phrase(Bw)");
 
     # Syntax
-    @{$cat_hash{synt_prosody}} = ("L-Phrase_Num-Syls", "C-Phrase_Num-Syls", "R-Phrase_Num-Syls",
+    @{$cat_hash{"phrase-prosody"}} = ("L-Phrase_Num-Syls", "C-Phrase_Num-Syls", "R-Phrase_Num-Syls",
                                   "L-Phrase_Num-Words", "C-Phrase_Num-Words", "R-Phrase_Num-Words",
                                   "Pos_C-Phrase_in_Utterance(Fw)", "Pos_C-Phrase_in_Utterance(Bw)");
-    @{$cat_hash{synt_position}} = ("C-Phrase_TOBI_End-tone");
+    @{$cat_hash{"phrase-position"}} = ("C-Phrase_TOBI_End-tone");
 
 
     # UTT
-    @{$cat_hash{utt}} = ("Num-Syls_in_Utterance", "Num-Words_in_Utterance", "Num-Phrases_in_Utterance");
+    @{$cat_hash{"utterance"}} = ("Num-Syls_in_Utterance", "Num-Words_in_Utterance", "Num-Phrases_in_Utterance");
 
     return %cat_hash;
 }

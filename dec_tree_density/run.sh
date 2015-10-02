@@ -12,11 +12,11 @@ states="2 3 4 5 6"
 states="2"
 corpora="full" # validation test"
 kinds="lf0 mgc"
-kinds="dur"
+ kinds="dur"
 ##
 # Stages
 ###########################################
-tree_stat=1      # Generate the statistics of decision tree
+tree_stat=0      # Generate the statistics of decision tree
 cat_report=1     # Generate the plot files for category analysis
 node_report=0    # Generate the plot files for node analysis
 
@@ -31,12 +31,12 @@ then
         do
             cur_output_dir="$output_dir/$e/$c/"
             mkdir -p $cur_output_dir/
-            cat $root_dir/$e/input/$c/*.lab | \
-                sed 's/[ \t]*[0-9]\+[ \t]*[0-9]\+[ \t]*//' >  "$cur_output_dir/labels"
+            # cat $root_dir/$e/input/$c/*.lab | \
+            #     sed 's/[ \t]*[0-9]\+[ \t]*[0-9]\+[ \t]*//' >  "$cur_output_dir/labels"
 
-	        # cout nb_models by labels
-            cat $root_dir/$e/input/$c/*.lab | sed 's/[ \t]*[0-9]\+[ \t]*[0-9]\+[ \t]*//' | sort | uniq -c | sort -rn | \
-                sed 's/[ \t]*\([0-9]\+\)[ \t]*\(.*\)/\2\t\1/' > "$cur_output_dir/labels_count.csv"
+	        # # cout nb_models by labels
+            # cat $root_dir/$e/input/$c/*.lab | sed 's/[ \t]*[0-9]\+[ \t]*[0-9]\+[ \t]*//' | sort | uniq -c | sort -rn | \
+            #     sed 's/[ \t]*\([0-9]\+\)[ \t]*\(.*\)/\2\t\1/' > "$cur_output_dir/labels_count.csv"
 
 
             for k in $kinds
@@ -50,10 +50,10 @@ then
                     echo "$cur_output_dir/$k/$s"
                     mkdir -p "$cur_output_dir/$k/$s"
 
-                    # Get pathes (FIXME: be more general than this stuff : $root_dir/$e/trees/qst1/ver1/cmp/$k.inf)
-                    perl get_path.pl -s $s \
-                         $root_dir/$e/build/raw/trees/$k.inf\
-                         "$cur_output_dir/labels" > $cur_output_dir/$k/$s/path_list
+                    # # Get pathes (FIXME: be more general than this stuff : $root_dir/$e/trees/qst1/ver1/cmp/$k.inf)
+                    # perl get_path.pl -s $s \
+                    #      $root_dir/$e/build/raw/trees/$k.inf\
+                    #      "$cur_output_dir/labels" > $cur_output_dir/$k/$s/path_list
 
 				    # Count using pathes
     	            cat $cur_output_dir/$k/$s/path_list | sed 's/.* : //g' | \
@@ -81,8 +81,8 @@ fi
 ###########################################
 if [ $cat_report -eq 1 ]
 then
-    rm -rf $output_dir/categories
-    mkdir -p $output_dir/categories/
+    # rm -rf $output_dir/categories
+    # mkdir -p $output_dir/categories/
 
     for corpora in $corpora
     do
@@ -93,7 +93,7 @@ then
                 echo "$output_dir/categories/${corpora}_${kind}_${state}....."
 
 	            # Merge category statistics
-                perl merge.pl "p1;p3;p5;syl_position;syl_prosody;syl_surp;word_position;word_prosody;synt_position;synt_prosody;utt" "$output_dir/%s/$corpora/$kind/$state/cat_count.csv" "baseline" "with_surprisal" "only_surprisal" > $output_dir/categories/${corpora}_${kind}_${state}.csv
+                perl merge.pl "p1;p3;p5;syl-position;syl-prosody;syl-surprisal;word-position;word-prosody;phrase-position;phrase-prosody;utterance" "$output_dir/%s/$corpora/$kind/$state/cat_count.csv" "baseline" "with_surprisal" "only_surprisal" > $output_dir/categories/${corpora}_${kind}_${state}.csv
 
                 mkdir -p $output_dir/categories/${corpora}/${kind}/${state}/
                 Rscript plot.r $output_dir/categories/${corpora}_${kind}_${state}.csv $output_dir/categories/${corpora}/${kind}/${state}/
